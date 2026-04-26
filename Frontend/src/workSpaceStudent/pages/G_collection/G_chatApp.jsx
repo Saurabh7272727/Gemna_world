@@ -85,7 +85,6 @@ const G_chatApp = ({ renderPart }) => {
             }
         } catch (error) {
             console.log("84 G_chatApp  ", error)
-            localStorage.clear();
             navi('/error_page');
         }
     }, [ConnectedUserList.length])
@@ -126,7 +125,6 @@ const G_chatApp = ({ renderPart }) => {
                         setUsers(ConnectedUserList);
                         setTest(false);
                     } else {
-                        localStorage.clear();
                         console.log("Erro G_chat ========================", result);
                         navi('/error_page');
                     }

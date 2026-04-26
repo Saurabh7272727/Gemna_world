@@ -48,7 +48,7 @@ const SelectMessagePortal = ({ safeMessages, timeGetter, WeekDay, isCurrentUser,
                     <div className="flex w-full max-w-full h-full bg-gray-950 text-white rounded-md shadow-lg overflow-hidden">
 
                         {
-                            !isCurrentUser ?
+                            isCurrentUser ?
                                 <div className="w-1/3 h-full min-h-1 bg-gray-900 flex flex-col items-center justify-center p-6 relative">
 
                                     <div className="flex flex-col items-center">

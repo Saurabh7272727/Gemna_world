@@ -61,18 +61,22 @@ export const startTelemetry = async () => {
         resource,
         traceExporter: env.telemetry.tracesEnabled
             ? new OTLPTraceExporter({
-                  url: buildOtlpUrl(env.telemetry.tracesPath),
-                  headers,
-              })
+                url: "https://ingest.us2.signoz.cloud/v1/traces",
+                headers: {
+                    "signoz-ingestion-key": "1Wi6nB4GGKWN7uiBKXHMTdVkHHiBKiK9gPvB"
+                }
+            })
             : undefined,
         metricReader: env.telemetry.metricsEnabled
             ? new PeriodicExportingMetricReader({
-                  exporter: new OTLPMetricExporter({
-                      url: buildOtlpUrl(env.telemetry.metricsPath),
-                      headers,
-                  }),
-                  exportIntervalMillis: env.telemetry.exportIntervalMs,
-              })
+                exporter: new OTLPMetricExporter({
+                    url: "https://ingest.us2.signoz.cloud/v1/metrics",
+                    headers: {
+                        "signoz-ingestion-key": "1Wi6nB4GGKWN7uiBKXHMTdVkHHiBKiK9gPvB"
+                    }
+                }),
+                exportIntervalMillis: env.telemetry.exportIntervalMs,
+            })
             : undefined,
         instrumentations: [
             getNodeAutoInstrumentations({
@@ -83,7 +87,7 @@ export const startTelemetry = async () => {
         ],
     });
 
-    await sdk.start();
+    sdk.start();
     started = true;
     logger.info('OpenTelemetry started', {
         otlpEndpoint: env.telemetry.endpointBase,
