@@ -83,7 +83,7 @@ const UserAccessMiddleware = async (req, res, next) => {
             method: req.method,
             reason: error.message,
         });
-        return res.status(422).json({ message: `server error Error-Code 422 ${error}`, success: false, status: 422 });
+        return res.status(500).json({ message: `server error Error-Code 422 ${error}`, success: false, status: 500 });
     }
 }
 

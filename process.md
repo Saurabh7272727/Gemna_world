@@ -19,7 +19,7 @@ Report ==========> analysis ----------- 29/03/2026 ------ Report
 
 
 0) _complete_ ---------- 11/03/2026 ================> we add in frontend - networkManager file to determine the user are connected to internet or not.
-1) pending ------------ to the Attendnace section student can upload the schedule of attendance - when something are not changed in schedule to send (not modified) , to reduce the response size and HTTP cache
+1) _pending_ ------------ to the Attendnace section student can upload the schedule of attendance - when something are not changed in schedule to send (not modified) , to reduce the response size and HTTP cache
 
 2) _complete_ -------------- using javaScript pattern in code file like - signleton, adapter pattern and use full and scalable files codes
 for modular code base
@@ -51,4 +51,9 @@ New feature introduction -------------------------- 10/04/26
 
 
 2) @gemna.team add new feature that user can delete old messages and edit the message but limiation with edit have to edit only 2 hours old messages according to sending timestamp --------- policy of the gemna auth service(GAS);
+
+3) _fix-issues_ when new user are connected (redis new entry) that trigger the online button 
+4) _fix-issues_ typing indication are not worl proper - (id finding issues)
+
+5) _new-redis-add-vercel_  - new KV store on vercel(internal service)
 

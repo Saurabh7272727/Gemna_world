@@ -1,0 +1,1 @@
+{"durationMs":38.55,"environment":"development","ip":"::1","level":"error","message":"HTTP request completed","method":"GET","path":"/student/account/access","requestId":"4b8e4362-8350-4bd7-a70d-435e5cd1e568","service":"gemna-backend","spanId":"ae889e087feacecb","statusCode":500,"timestamp":"2026-04-26T18:44:22.815Z","traceId":"b71cdacc62a6075469eaf5780489381f"}
